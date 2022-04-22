@@ -15,7 +15,14 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate & 
     var imageURLArray = [URL]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    private func transitToGalleryVC() {
+        let storyboard = UIStoryboard(name: "GalleryViewController", bundle: Bundle.main)
+        let vc = storyboard.instantiateInitialViewController() as! GalleryViewController
+        navigationController?.pushViewController(vc, animated: true)
+        vc.imagesArrayFromImageController = imagesArray
+        vc.imageURLArrayFromImageController = imageURLArray
     }
     
     @IBAction func onAddNewImagesButton(_ sender: Any) {
@@ -28,6 +35,8 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     @IBAction func onSeeButton(_ sender: Any) {
         print(imagesArray)
+        transitToGalleryVC()
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

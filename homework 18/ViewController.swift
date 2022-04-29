@@ -9,14 +9,14 @@ import UIKit
 import KeychainSwift
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var enterYourLoginLabel: UILabel!
+    @IBOutlet weak var enterYourPasswordLabel: UILabel!
+    @IBOutlet weak var incorrectDataLabel: UILabel!
 
-    @IBOutlet weak var EnterYourLoginLabel: UILabel!
-    @IBOutlet weak var EnterYourPasswordLabel: UILabel!
-    @IBOutlet weak var IncorrectdataLabel: UILabel!
-    
-    @IBOutlet weak var LoginTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
-    
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+
     @IBOutlet weak var onNextButton: UIButton!
     
     let passwordKey = "passwordKey"
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     private func transitToImageVC() {
@@ -40,29 +39,27 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     @IBAction func onRegistrationButton(_ sender: Any) {
         transitToRegistrationVC()
     }
     
     @IBAction func onEnterButton(_ sender: Any) {
-        EnterYourLoginLabel.isHidden = false
-        EnterYourPasswordLabel.isHidden = false
-        LoginTextField.isHidden = false
-        PasswordTextField.isHidden = false
+        enterYourLoginLabel.isHidden = false
+        enterYourPasswordLabel.isHidden = false
+        loginTextField.isHidden = false
+        passwordTextField.isHidden = false
         onNextButton.isEnabled = true
     }
 
     @IBAction func onNextButton(_ sender: Any) {
-        
-        guard let loginTextFieldFinal = LoginTextField.text else{
+        guard let loginTextFieldFinal = loginTextField.text else{
         return
     }
-        guard let passwordTextFieldFinal = PasswordTextField.text else{
+        guard let passwordTextFieldFinal = passwordTextField.text else{
         return
     }
         if keychain.get(loginKey) == nil || keychain.get(loginKey) != loginTextFieldFinal || keychain.get(passwordKey) == nil || keychain.get(passwordKey) != passwordTextFieldFinal {
-            IncorrectdataLabel.isHidden = false
+            incorrectDataLabel.isHidden = false
         } else {
         transitToImageVC()
         }

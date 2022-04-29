@@ -22,11 +22,11 @@ class RegistrationViewController: UIViewController {
     let keychain = KeychainSwift()
 
     @IBOutlet weak var alreadyCreatedLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
     private func transitToVC() {
     navigationController?.popToRootViewController(animated: true)
     }

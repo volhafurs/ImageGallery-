@@ -12,9 +12,9 @@ class GalleryViewController: UIViewController {
     var imagesArrayFromImageController = [UIImage]()
     var imageURLArrayFromImageController = [URL]()
     
-    private var CollectionView : UICollectionView!
-    private var CellWidth = 170
-    private var CellHeight = 170
+    private var collectionView : UICollectionView!
+    private var CellWidth = 190
+    private var CellHeight = 190
     
     
     
@@ -29,11 +29,11 @@ class GalleryViewController: UIViewController {
         let flowlayout = UICollectionViewFlowLayout()
         flowlayout.itemSize = CGSize(width: CellWidth, height: CellHeight)
         flowlayout.scrollDirection = .vertical
-        CollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowlayout)
-        CollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        CollectionView.delegate = self
-        CollectionView.dataSource = self
-        view.addSubview(CollectionView)
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowlayout)
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.addSubview(collectionView)
     }
 
 }
@@ -48,7 +48,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = CollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.backgroundColor = .black
         cell.imageView.image = imagesArrayFromImageController[indexPath.row]
         return cell

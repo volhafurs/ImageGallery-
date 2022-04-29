@@ -36,7 +36,6 @@ class ImagesViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBAction func onSeeButton(_ sender: Any) {
         print(imagesArray)
         transitToGalleryVC()
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

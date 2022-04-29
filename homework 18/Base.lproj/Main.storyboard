@@ -82,12 +82,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="TIu-u0-PKe"/>
                     <connections>
-                        <outlet property="EnterYourLoginLabel" destination="CXf-zF-MCI" id="zaW-np-xpA"/>
-                        <outlet property="EnterYourPasswordLabel" destination="4xt-yw-bBY" id="EV7-M9-lir"/>
-                        <outlet property="IncorrectdataLabel" destination="vLf-vB-NOX" id="qLA-FB-jMY"/>
-                        <outlet property="LoginTextField" destination="PBg-CF-vLm" id="tK6-xw-4Xm"/>
-                        <outlet property="PasswordTextField" destination="T3P-h1-x0G" id="Aiv-Tv-CjE"/>
+                        <outlet property="enterYourLoginLabel" destination="CXf-zF-MCI" id="3kI-XY-Te9"/>
+                        <outlet property="enterYourPasswordLabel" destination="4xt-yw-bBY" id="eWn-Fu-i2c"/>
+                        <outlet property="incorrectDataLabel" destination="vLf-vB-NOX" id="aIt-65-f8Z"/>
+                        <outlet property="loginTextField" destination="PBg-CF-vLm" id="UkS-R6-jIe"/>
                         <outlet property="onNextButton" destination="HFL-fm-K5s" id="WpI-ar-1Sk"/>
+                        <outlet property="passwordTextField" destination="T3P-h1-x0G" id="Q0b-9C-f4m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
